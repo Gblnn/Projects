@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="home.css">
+    <script>
+      function validate() {
+        var txt;
+        if (confirm("Confirm Logout?")) {
+          window.location.href="Login.html";
+        }
+      }
+
+      function emptycheck(){
+        var ipt = document.getElementById('message-input').value;
+
+        if (ipt==""){
+        }
+        else{
+          sendMessage();
+        }
+      }
+
+      function report(){
+        var query = document.getElementById("message-input").value;
+        alert("We have created an error report to alert the developers to add a response to the prompt : " + query);
+      }
+
+      function admissionDetails(){
+        var anchor = document.createElement('a');
+        var link = document.createTextNode("https://www.grd.org/grdcs/admission-details/");
+        anchor.appendChild(link);
+        anchor.href = "https://www.grd.org/grdcs/admission-details/";
+        anchor.style.color="white";
+        anchor.style.padding = "5px";
+        anchor.style.marginTop = "5px";
+        anchor.style.maxWidth = "75px";
+        anchor.style.display = "inline-block";
+        document.getElementById("chat-body").appendChild(anchor);
+      }
+
+      function coursesOffered(){
+        var anchor = document.createElement('a');
+        var link = document.createTextNode("https://www.grd.org/grdcs/courses-offered/");
+        anchor.appendChild(link);
+        anchor.href = "https://www.grd.org/grdcs/courses-offered/";
+        anchor.style.color="white";
+        anchor.style.padding = "5px";
+        anchor.style.borderRadius = "5px";
+        anchor.style.marginTop = "5px";
+        anchor.style.maxWidth = "75px";
+        anchor.style.display = "inline-block";
+        document.getElementById("chat-body").appendChild(anchor);
+      }
+
+      function eligibility(){
+          var anchor = document.createElement('a');
+          var link = document.createTextNode("https://www.grd.org/grdcs/wp-content/uploads/2021/08/Admission-Eligibility-Details-2021-2022.pdf");
+          anchor.appendChild(link);
+          anchor.href = "https://www.grd.org/grdcs/wp-content/uploads/2021/08/Admission-Eligibility-Details-2021-2022.pdf";
+          anchor.style.color="white";
+          anchor.style.padding = "5px";
+          anchor.style.borderRadius = "5px";
+          anchor.style.marginTop = "5px";
+          anchor.style.maxWidth = "75px";
+          anchor.style.display = "inline-block";
+          document.getElementById("chat-body").appendChild(anchor);
+        }
+
+      function admission(){
+          var anchor = document.createElement('a');
+          var link = document.createTextNode("https://csadmissions.grd.org/");
+          anchor.appendChild(link);
+          anchor.href = "https://csadmissions.grd.org/";
+          anchor.style.color="white";
+          anchor.style.padding = "5px";
+          anchor.style.borderRadius = "5px";
+          anchor.style.marginTop = "5px";
+          anchor.style.maxWidth = "75px";
+          anchor.style.display = "inline-block";
+          document.getElementById("chat-body").appendChild(anchor);
+        }
+
+      function sendMessage(){
+          var query = document.getElementById("message-input").value;
+          var div = document.createElement("div");
+          var p = document.createElement("p");
+          p.style.background = "white";
+          p.style.color = "black";
+          p.style.padding = "10px";
+          p.style.borderRadius = "5px";
+          p.style.display = "inline-block";
+          p.style.maxWidth = "60%";
+          p.innerHTML = query;
+          document.getElementById("chat-body").appendChild(div);
+          document.getElementById("chat-body").appendChild(p);
+          response();
+        }
+
+      function response(){
+          var empty = false;
+          var query = document.getElementById("message-input").value;
+          var input = query.toLowerCase();
+          var div = document.createElement("div");
+          var p = document.createElement("p");
+          p.style.background = "#2a2a2a";
+          p.style.color = "white";
+          p.style.padding = "10px";
+          p.style.borderRadius = "5px";
+          p.style.margin = "0";
+          p.style.maxWidth = "75%";
+          document.getElementById("chat-body").appendChild(div);
+          document.getElementById("chat-body").appendChild(p);
+
+          //Chatbot logic
+          if (input.includes("how") && input.includes("you")){
+            p.innerHTML = "I'm good! How are you doing today?";
+          }
+
+          else if(input.includes("Thank")){
+            p.innerHTML = "You're Welcome!";
+          }
+
+          else if(input.includes("you") && input.includes("cant")){
+            p.innerHTML = "Oh. I'm sorry I couldn't be helpful :(";
+          }
+
+          else if(input.includes("your") && input.includes("name")){
+            p.innerHTML = "I don't really have a name at this point :(";
+          }
+
+          else if(input.includes("you") && input.includes("name")){
+            p.innerHTML = "I'd rather like to stay unnamed for professional reasons :)";
+          }
+
+          else if(input.includes("when") && input.includes("start")){
+            p.innerHTML = "Admissions to the UG Courses usually start on the day following the +2 (Higher Secondary) results of Tamilnadu (usually around middle of May) and will be mostly completed within 2-3 weeks.<br> For more information regarding Admission Details click on the link below."
+            admissionDetails();
+          }
+
+          else if (input.includes("hi") || input.includes("hey")){
+            p.innerHTML = "Hello there! How can I help you?";
+          }
+
+          else if (input.includes("hello")){
+            p.innerHTML = "Hello there! How can I help?";
+          }
+
+
+
+          else if (input.includes("good") && input.includes("fine") && input.includes("great") || input.includes("too")){
+            p.innerHTML = "That's great to hear!";
+          }
+
+          else if(input.includes("sad")){
+            p.innerHTML = "Oh. I'm sorry to hear that. Please try talking to somebody about it. It can greatly help";
+          }
+
+          else if (input.includes("fee")){
+            p.innerHTML = "The fee structure varies for each course depending on the type of programme and their areas of specialization.<br> For a detailed overview on the various courses offered, click on the link below";
+            coursesOffered();
+          }
+
+          else if (input.includes("course")){
+            p.innerHTML = "We offer a wide variety of courses including both Undergraduate and Postgraduate Programmes.<br> To know more click on the link below. ";
+            coursesOffered();
+          }
+
+          else if (input.includes("eligibility")){
+            p.innerHTML = "Different courses have different eligibilities based on the requirements of study areas. For a detailed overview click on the link below.";
+            eligibility();
+          }
+
+          else if (input.includes("admission")){
+            p.innerHTML = "In order to admit you will need to fill out a registration form which will accompany a registration fee. To continue with admission click the link below.";
+            admission();
+          }
+
+          else if (input.includes("Facilities")){
+            p.innerHTML = "Our Campus provides a good infrastructure that is maintained neatly including labs and conference halls which could contribute to a better learning environment for students";
+            admission();
+          }
+
+          else{
+            p.innerHTML = "I'm sorry I couldn't understand that. We are working to add a response for your prompt.";
+            report();
+          }
+
+          document.getElementById("message-input").value = "";
+        }
+
+    </script>
+  </head>
+  <body>
+    <div class = "header">
+      <div>
+        <div class="chat-container">
+  		      <div class="chat-header">
+  			         <h2>Ask us anything</h2>
+                 <button onclick="validate()">LOGOUT</button>
+  		      </div>
+  		      <div class="chat-body" id="chat-body">
+  			         <div class="chat-message received">
+  				             <p>Hello! how can I help?</p>
+  			         </div>
+  		      </div>
+  		      <div class="chat-input">
+  			         <input type="text" id="message-input" placeholder="Type a message..." required>
+                 <button onclick="emptycheck()"accesskey="enter">Send</button>
+  		      </div>
+  	     </div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+body{
+  font-family: Bahnschrift;
+  background-color: #0e0e0e;
+  color: white;
+  margin:0; padding:0;
+
+}
+
+form{
+  background-color: #1a1a1a;
+  padding: 10px;
+  width: 250px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  font-size: 14px;
+  align-items: center;
+  text-align: center;
+  border: solid 1px;
+  border-color: #6a6a6a;
+  border-radius: 10px;
+  justify-content: center;
+
+
+}
+
+form input[type = "text"], form input[type = "password"], form input[type = "email"]{
+  background-color: #1e1e1e;
+  text-align: center;
+  font-style: ;
+  padding: 5px;
+  height: 15px;
+  border: solid 1px;
+  border-color: #6a6a6a;
+  border-radius: 5px;
+  padding: 10px 10px;
+  width: 200px;
+  font-size: 12px;
+  font-family: Bahnschrift;
+  color: white;
+}
+
+form input[type = "submit"]{
+  background-color: white;
+  border: none;
+  border-radius:5px;
+  padding: 10px 10px;
+  width: 100px;
+  font-family: Bahnschrift;
+}

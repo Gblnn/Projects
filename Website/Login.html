@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel = "stylesheet" href = "Signup.css">
+    <script>
+      function validate(){
+        var username = document.getElementById('Username').value;
+        var password = document.getElementById('Password').value;
+
+        if(username == ""){
+          alert("Username Required.");
+        }
+        else if(password == ""){
+          alert("Password Required.");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form action="login.php" method="post">
+      <h1>LOGIN</h1>
+      <br>
+      <input type="text" name="username" placeholder="Enter Username" id = "Username"><br><br>
+      <input type="password" name="password" placeholder="Enter Password" id = "Password"><br><br>
+      <br>
+      <input type="submit" value="Log-in >" href="Home.html" onclick="validate()" accesskey="Enter">
+      <br><br>
+      <div class = "Bottom">
+        <p style="font-size:12px; color:#6a6a6a;"> Dont have an account?<br><br>
+        <a href="Signup.html" style = "font-weight:100px;color:white; font-size:12px;">Click here</a>
+      </div>
+    </form>
+  </body>
+</html>

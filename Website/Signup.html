@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Signup</title>
+    <link rel = "stylesheet" href = "Signup.css">
+    <script>
+      function validate(){
+        var username = document.getElementById('Username').value;
+        var password = document.getElementById('Password').value;
+        var email = document.getElementById('Email').value;
+
+        if(username == ""){
+          alert("Username Required.");
+        }
+        else if(password == ""){
+          alert("Password Required.");
+        }
+        else if(username == "" && password == ""){
+          alert("Username and Password Required.");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form action="connect.php" method="post">
+      <h1>SIGN-UP</h1>
+      <br>
+      <input type="text" name="username" placeholder="Create Username" id="Username"><br><br>
+      <input type="password" name="password" placeholder="Create Password" id="Password"><br><br>
+      <input type="email" name="email" placeholder="Enter Email(Optional)" id="Email"><br><br>
+      <br>
+      <input type="submit" value="Sign-up  >" href="Home.html" onclick="validate()" accesskey="Enter">
+      <br><br>
+      <div class = "Bottom">
+        <p style="font-size:12px; color:#6a6a6a;"> Already have an account?<br><br>
+        <a href="Login.html" style = "font-weight:100px;color:white; font-size:12px;">Click here</a>
+      </div>
+    </form>
+  </body>
+</html>
